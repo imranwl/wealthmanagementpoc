@@ -1,0 +1,32 @@
+
+
+<html>
+	
+	<head>
+<meta charset="UTF-8">
+<title> Confirmed products  </title>
+<link rel="stylesheet" href="css/registration.css">
+</head>
+	
+	<body bgcolor="#00bdfc">
+		
+		
+		<br> <br> <br> 
+		<h3 align='left'>  Welath management advice sought for the products : <span th:text="${result}" /> </h3>
+		<h3 align='left'>  Our customer representive will reach you  </h3>
+		
+		
+		<form action="http://localhost:8080/registration/order/summary" method="get">
+
+  <input type="hidden" name="email" th:value="${email}"/>
+  <input type="hidden" name="result" th:value="${result}"/>
+ 
+ <input type="submit" value="view request summary"/>
+ 
+</form>
+
+		
+		
+    </body>
+	
+</html>

@@ -1,0 +1,43 @@
+
+
+<html>
+	
+	<head>
+<meta charset="UTF-8">
+<title> Report  </title>
+<style>
+	input[type=button], input[type=submit], input[type=reset] {
+  border: 3px  black;
+    font-size: 1rem;
+    color: rgb(66, 69, 86);
+    padding: 0.1rem 1rem;
+    background:yellow;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+        
+    </style>
+</head>
+	
+	<body bgcolor="#00bdfc">
+		
+		
+		<br> <br> <br> 
+		<h3 align='left'> Name of products <span th:text="${result}" /> </h3>
+		<h3 align='left'>  First name is : <span th:text="${fname}"/>  </h3>
+		 
+		
+		<form action="http://localhost:8080/registration/order/track" method="get">
+
+  <input type="hidden" name="email" th:value="${email}"/>
+  
+ 
+ <input type="submit" value="Track status"/>
+ 
+</form>
+
+		
+		
+    </body>
+	
+</html>

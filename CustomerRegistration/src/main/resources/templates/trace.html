@@ -1,0 +1,223 @@
+
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title> Trace  </title>
+		<style>
+            #circle {
+      width: 20px;
+      height: 20px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: green;
+    }
+    
+     #circlenor {
+      width: 20px;
+      height: 20px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: white;
+    }
+    </style>
+	</head>
+	
+	<body bgcolor="#00bdfc">
+		
+		
+		<br> <br> <br> <br> <br>
+		<h3> Status of your request </h3>
+		
+		
+		<h3 align='left'> Your request status is : <span th:text=${status} /> </h3>
+		
+		 
+		
+		
+		<td>
+			 <span  th:if="${status} == 'Advice Request recieved'">
+				 
+			 <table>
+			 <tr> 
+				 <td><div id="circle"></div> </td>
+				 <td>Advice Request recieved </td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td> KYC verification</td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td>In process </td>
+			 </tr>
+			 <tr> 
+				 <td> <div id="circlenor"></div></td>
+				 <td>Succesfully completed  </td>
+			 </tr>
+			 </table>	   
+			 
+			 
+			</span>
+			
+		</td>
+		
+		
+		<td>
+			 <span  th:if="${status} == 'KYC verification'">
+			 
+			 <table>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td>Advice Request recieved </td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circle"></div> </td>
+				 <td> KYC verification in process</td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td>In process </td>
+			 </tr>
+			 <tr> 
+				 <td> <div id="circlenor"></div></td>
+				 <td>Succesfully completed  </td>
+			 </tr>
+			 </table>	 
+			 
+			</span>
+			
+		</td>
+		
+		<td>
+			 <span  th:if="${status} == 'In process'">
+			 <table>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td>Advice Request recieved </td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td> KYC verification in process</td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circle"></div> </td>
+				 <td>In process </td>
+			 </tr>
+			 <tr> 
+				 <td> <div id="circlenor"></div></td>
+				 <td>Succesfully completed  </td>
+			 </tr>
+			 </table>	
+			 
+			 
+			</span>
+			
+		</td>
+		
+		<td>
+			 <span  th:if="${status} == 'Succesfully completed'">
+			   <table>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td>Advice Request recieved </td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td> KYC verification in process</td>
+			 </tr>
+			 <tr> 
+				 <td><div id="circlenor"></div> </td>
+				 <td>In process </td>
+			 </tr>
+			 <tr> 
+				 <td> <div id="circle"></div></td>
+				 <td>Succesfully completed  </td>
+			 </tr>
+			 </table>	
+			 
+			 
+			</span>
+			
+		</td>
+		
+		
+		
+		
+	<!--	
+		bgcolor="#00bdfc"
+		1.  <span  th:if="'<span th:text='${status}'/>' == 'Customer not available'">Advice Request recieved  </span>
+		
+		2.<span  th:if="<span th:text=${status}/> == 'Customer not available'">Advice Request recieved  </span>
+		
+		<h3 align='left'>  <span th:text="${status}" /> </h3>
+		
+		<h3 <span th:text='${status}' </h3>
+		
+		<td>
+			 <span style="color: green" th:if = "${<span th:text='${status}'  == 'Customer not available'}">Advice Request recieved
+			 <p> one </p>
+			 <p> two </p>
+			 
+			 </span>
+			
+		</td>
+		
+		
+		
+		<span style="color: green" th:if = "${'${status}' == 'Customer not available'}">Advice Request recieved
+			
+			<span th:text="${status}"
+			
+			<span th:text='${status}'
+	
+	<p id="demo"></p>
+   
+
+		<script>
+			
+			     var ref=null;
+			      for (var i = 0; i<2000; i++){
+					  if(i==0){
+						  ref=httpGet();
+						  document.writeln(ref);
+					  }
+					  if("Succesfully completed"==ref){
+						  document.writeln(ref);
+						  break;
+					  }
+					  
+					  if(ref==httpGet()){
+						  continue;
+					  }
+					  else{
+						  ref=httpGet();
+						  document.writeln(ref);
+					  }
+					  
+					  
+				  }
+			
+			
+			
+			function httpGet()
+				{
+				    var xmlHttp = new XMLHttpRequest();
+				    xmlHttp.open( "GET", "http://localhost:8080/registration/order/gettrack?email=imranjiraone@gmail.com", false ); // false for synchronous request
+				    xmlHttp.send( null );
+				    return xmlHttp.responseText;
+				}
+				
+				
+				
+				
+		
+		</script>
+	
+	-->
+		
+    </body>
+	
+</html>
